@@ -47,7 +47,7 @@ Features:
   Bug Survivor, Ghost Walker), shown on their own screen in the menu and saved with the Hall of Fame
 - Wrap-around option: leave through one edge and come back on the other side
 - Hall of Fame: top 10 with initials, saved on the disk; the menu shows it in turn with the title picture
-- A scrolling text line under the playfield (smooth, right to left, repeating), in a new colour every level
+- A credit line under the playfield, "STRONKIE SNAKE © 2026, PROGRAMMED CLAUDE", in a new colour every level
 - Little effects: new apples sparkle, the border flashes on a crash, "LEVEL nn" and "GET READY" before each life
 
 - Main menu: the Stronkie's Snake artwork as a hi-res bitmap (with "Created By Mark Stronks (C) 2026"), and a panel showing speed, last score, hi-score and controls
@@ -69,11 +69,12 @@ The latest version is in the main folder, older ones are in `previous versions`.
 Each version has a `.prg` (the program) and a `.d64` (a disk image with the program on it, named SNAKE).
 The version number is shown on screen from V0.03 on.
 From V0.13 the program is crunched: after RUN it unpacks itself (about 2 seconds) and starts.
-V1.0 is the final version (unless bugs turn up).
+V1.1 is the final version (unless bugs turn up).
 
 | Version | Files |
 |---|---|
-| **V1.0** (latest, final) | `snake_v1.0.prg`, `snake_v1.0.d64` |
+| **V1.1** (latest, final) | `snake_v1.1.prg`, `snake_v1.1.d64` |
+| V1.0 | `previous versions/snake_v1.0.prg`, `.d64` |
 | V0.13 | `previous versions/snake_v0.13.prg`, `.d64` |
 | V0.12 | `previous versions/snake_v0.12.prg`, `.d64` |
 | V0.11 | `previous versions/snake_v0.11.prg`, `.d64` |
@@ -89,6 +90,11 @@ V1.0 is the final version (unless bugs turn up).
 | V0.01 | `previous versions/snake_v0.01.prg`, `.d64` |
 
 Change Log:
+
+**V1.1** (2026-11-01)
+- Fix: the screen sometimes shook during the game. The scrolling text line is gone and with it the raster trick it used
+- Row 24 now shows a fixed line over the full width: "STRONKIE SNAKE © 2026, PROGRAMMED CLAUDE", still in a new colour every level
+- A © character of its own, so the line fits in exactly 40 characters
 
 **V1.0** (2026-11-01)
 - The playfield is one line shorter at the bottom; the bottom wall is now on row 23
