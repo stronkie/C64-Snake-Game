@@ -14,24 +14,37 @@ LOAD"SNAKE",8
 RUN
 ```
 
-- **Menu:** fire, SPACE or RETURN starts the game. Joystick left/right or A / D sets the speed.
+- **Menu:** fire, SPACE or RETURN starts the game. Joystick left/right or A / D sets the speed,
+  joystick up/down or W switches wrap-around on or off.
 - **Game:** joystick in port 2, or W A S D. You have 3 lives, shown as apples at the top right.
-- **After game over:** fire or any key goes back to the menu.
+  Eat 10 apples to reach the next level.
+- **After game over:** with a Hall of Fame score you type your initials (joystick up/down and fire,
+  or the keyboard and RETURN); otherwise fire or any key goes back to the menu.
 
 Features:
+
+- 10 levels, each with its own maze; 10 apples per level, then back to level 1 at your current speed
+- A proper snake: head with eyes facing the way it moves, scaled body, rounded corners and a tapered tail
+- The snake gets faster every 5 apples
+- Bonus stars (worth 5 points) appear now and then and vanish after about 4 seconds
+- A heartbeat that beats faster as the snake grows
+- Wrap-around option: leave through one edge and come back on the other side
+- Hall of Fame: top 10 with initials, saved on the disk; the menu shows it in turn with the title picture
+- Little effects: new apples sparkle, the border flashes on a crash, "LEVEL nn" and "GET READY" before each life
 
 - Main menu: the Stronkie's Snake artwork as a hi-res bitmap (with "Created By Mark Stronks (C) 2026"), and a panel showing speed, last score, hi-score and controls
 - Three speeds: SLOW, NORMAL, FAST
 - 3 lives, shown as small red apple sprites; losing one restarts the snake and keeps your score
 - Game screen with the title "STRONKIE'S SNAKE" in yellow next to the score
 - Sound effects: a rising "bloop" when eating an apple, a crash when you lose a life
-- Hi-score saved on the disk as the file HISCORE every time it is beaten, and loaded at start-up.
+- The Hall of Fame is saved on the disk as the file HISCORE whenever you get in, and loaded at start-up
+  (a HISCORE file from V0.07/V0.08 is taken over as "YOU").
   Needs a writable disk: a real 1541 disk without write protection, SD2IEC, Pi1541 or an Ultimate.
-  Without one the game still works and tells you the hi-score was not saved.
+  Without one the game still works and tells you the score was not saved.
 - Menu music: "Sad Song" by Antti Hannula (Flex), 2020, looping until the game starts
 - Full stereo music with a second SID at $D500 (Ultimate 64 / UltiSID, SIDFX, dual-SID boards, VICE).
   On a standard single-SID C64 the first SID's three voices play.
-  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.08.d64`
+  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.09.d64`
 - Reversing into yourself is blocked, so a quick wrong key won't end the game
 
 Version numbers :
@@ -42,7 +55,8 @@ The version number is shown on screen from V0.03 on.
 
 | Version | Files |
 |---|---|
-| **V0.08** (latest) | `snake_v0.08.prg`, `snake_v0.08.d64` |
+| **V0.09** (latest) | `snake_v0.09.prg`, `snake_v0.09.d64` |
+| V0.08 | `previous versions/snake_v0.08.prg`, `.d64` |
 | V0.07 | `previous versions/snake_v0.07.prg`, `.d64` |
 | V0.06 | `previous versions/snake_v0.06.prg`, `.d64` |
 | V0.05 | `previous versions/snake_v0.05.prg`, `.d64` |
@@ -52,6 +66,18 @@ The version number is shown on screen from V0.03 on.
 | V0.01 | `previous versions/snake_v0.01.prg`, `.d64` |
 
 Change Log:
+
+**V0.09** (2026-11-01)
+- 10 levels with mazes, 10 apples per level, "LEVEL nn" shown on screen and on the top line
+- New snake graphics: head with eyes, body, corners and tail; new apple, bonus star and brick walls
+- Speed-up every 5 apples
+- Bonus stars worth 5 points, for about 4 seconds
+- Heartbeat sound that speeds up as the snake grows
+- Wrap-around option in the menu (W or joystick up/down)
+- Hall of Fame: top 10 with 3-letter initials, entered by joystick or keyboard, saved as HISCORE
+- Menu alternates between the title picture and the Hall of Fame
+- Effects: apples sparkle when they appear, the border flashes on a crash, GET READY before each life
+- Random numbers now come from the program itself, so all three SID voices are free for sound
 
 **V0.08** (2026-11-01)
 - New main menu picture: bigger title, the snake about to eat an apple, and "Created By Mark Stronks (C) 2026" in red and light red
