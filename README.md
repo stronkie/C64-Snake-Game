@@ -20,13 +20,13 @@ RUN
 
 Features:
 
-- Main menu screen with the Stronkie's Snake title, maze artwork, last score and hi-score
+- Main menu: the Stronkie's Snake artwork as a hi-res bitmap, with a panel showing speed, last score, hi-score and controls
 - Three speeds: SLOW, NORMAL, FAST
 - Hi-score kept until the C64 is switched off
 - Menu music: "Sad Song" by Antti Hannula (Flex), 2020, looping until the game starts
 - Full stereo music with a second SID at $D500 (Ultimate 64 / UltiSID, SIDFX, dual-SID boards, VICE).
   On a standard single-SID C64 the first SID's three voices play.
-  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.05.d64`
+  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.06.d64`
 - Reversing into yourself is blocked, so a quick wrong key won't end the game
 
 Version numbers :
@@ -37,13 +37,20 @@ The version number is shown on screen from V0.03 on.
 
 | Version | Files |
 |---|---|
-| **V0.05** (latest) | `snake_v0.05.prg`, `snake_v0.05.d64` |
+| **V0.06** (latest) | `snake_v0.06.prg`, `snake_v0.06.d64` |
+| V0.05 | `previous versions/snake_v0.05.prg`, `.d64` |
 | V0.04 | `previous versions/snake_v0.04.prg`, `.d64` |
 | V0.03 | `previous versions/snake_v0.03.prg`, `.d64` |
 | V0.02 | `previous versions/snake_v0.02.prg`, `.d64` |
 | V0.01 | `previous versions/snake_v0.01.prg`, `.d64` |
 
 Change Log:
+
+**V0.06** (2026-11-01)
+- New main menu: the Stronkie's Snake artwork shown as a C64 hi-res bitmap (white title, cyan drawing on blue)
+- Panel on the right with version, speed, last score, hi-score, controls and music credit, in the C64's own font
+- Old character-based menu removed
+- Program is now 69 blocks (the picture takes about 7 KB)
 
 **V0.05** (2026-11-01)
 - Menu music: "Sad Song" by Antti Hannula (Flex), looping until the game starts
