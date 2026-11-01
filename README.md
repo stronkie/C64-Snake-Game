@@ -17,7 +17,7 @@ RUN
 - **Menu:** fire, SPACE or RETURN starts the game. Joystick left/right or A / D sets the speed,
   joystick up/down or W switches wrap-around on or off.
 - **Game:** joystick in port 2, or W A S D. You have 3 lives, shown as apples at the top right.
-  Eat 10 apples to reach the next level.
+  Eat 10 apples to reach the next level. P, RETURN, F1 or the fire button pauses the game.
 - **After game over:** with a Hall of Fame score you type your initials (joystick up/down and fire,
   or the keyboard and RETURN); otherwise fire or any key goes back to the menu.
 
@@ -26,7 +26,14 @@ Features:
 - 10 levels, each with its own maze; 10 apples per level, then back to level 1 at your current speed
 - A proper snake: head with eyes facing the way it moves, scaled body, rounded corners and a tapered tail
 - The snake gets faster every 5 apples
-- Bonus stars (worth 5 points) appear now and then and vanish after about 4 seconds
+- Bonus stars (worth 5 points) and power-ups appear now and then and vanish after about 4 seconds:
+  - **Clock:** the game runs at half speed for 10 seconds
+  - **Scissors:** the snake is cut in half (at least 4 pieces stay)
+  - **Ghost:** for 6 seconds the snake goes straight through walls and edges
+  - An icon on the top line shows a running clock or ghost, blinking just before it ends
+- Bonus level after levels 5 and 10: 32 apples to eat in 30 seconds, +25 when you eat them all.
+  Running out of time or crashing just ends the bonus level, it never costs a life
+- Pause: "-- PAUSED --" blinks on the top line until you press P, RETURN, F1, SPACE or fire
 - A heartbeat that beats faster as the snake grows
 - Wrap-around option: leave through one edge and come back on the other side
 - Hall of Fame: top 10 with initials, saved on the disk; the menu shows it in turn with the title picture
@@ -44,7 +51,7 @@ Features:
 - Menu music: "Sad Song" by Antti Hannula (Flex), 2020, looping until the game starts
 - Full stereo music with a second SID at $D500 (Ultimate 64 / UltiSID, SIDFX, dual-SID boards, VICE).
   On a standard single-SID C64 the first SID's three voices play.
-  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.09.d64`
+  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.10.d64`
 - Reversing into yourself is blocked, so a quick wrong key won't end the game
 
 Version numbers :
@@ -55,7 +62,8 @@ The version number is shown on screen from V0.03 on.
 
 | Version | Files |
 |---|---|
-| **V0.09** (latest) | `snake_v0.09.prg`, `snake_v0.09.d64` |
+| **V0.10** (latest) | `snake_v0.10.prg`, `snake_v0.10.d64` |
+| V0.09 | `previous versions/snake_v0.09.prg`, `.d64` |
 | V0.08 | `previous versions/snake_v0.08.prg`, `.d64` |
 | V0.07 | `previous versions/snake_v0.07.prg`, `.d64` |
 | V0.06 | `previous versions/snake_v0.06.prg`, `.d64` |
@@ -66,6 +74,12 @@ The version number is shown on screen from V0.03 on.
 | V0.01 | `previous versions/snake_v0.01.prg`, `.d64` |
 
 Change Log:
+
+**V0.10** (2026-11-01)
+- Title picture compressed (6750 to 4103 bytes): the program is down from 81 to 74 blocks, so it loads faster
+- Power-ups: clock (half speed for 10 s), scissors (cut the snake in half), ghost (through walls for 6 s), with icons on the top line
+- Pause key: P, RETURN, F1 or fire
+- Bonus level after levels 5 and 10: 32 apples in 30 seconds, +25 for clearing it, no life lost
 
 **V0.09** (2026-11-01)
 - 10 levels with mazes, 10 apples per level, "LEVEL nn" shown on screen and on the top line
