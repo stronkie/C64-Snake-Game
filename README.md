@@ -48,10 +48,8 @@ Features:
   (a HISCORE file from V0.07/V0.08 is taken over as "YOU").
   Needs a writable disk: a real 1541 disk without write protection, SD2IEC, Pi1541 or an Ultimate.
   Without one the game still works and tells you the score was not saved.
-- Menu music: "Sad Song" by Antti Hannula (Flex), 2020, looping until the game starts
-- Full stereo music with a second SID at $D500 (Ultimate 64 / UltiSID, SIDFX, dual-SID boards, VICE).
-  On a standard single-SID C64 the first SID's three voices play.
-  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.10.d64`
+- Menu music: "Cool Tune" by Charles Deenen (1987, Scoop Designs), looping until the game starts.
+  Plays on any C64 (one SID)
 - Reversing into yourself is blocked, so a quick wrong key won't end the game
 
 Version numbers :
@@ -62,7 +60,8 @@ The version number is shown on screen from V0.03 on.
 
 | Version | Files |
 |---|---|
-| **V0.10** (latest) | `snake_v0.10.prg`, `snake_v0.10.d64` |
+| **V0.11** (latest) | `snake_v0.11.prg`, `snake_v0.11.d64` |
+| V0.10 | `previous versions/snake_v0.10.prg`, `.d64` |
 | V0.09 | `previous versions/snake_v0.09.prg`, `.d64` |
 | V0.08 | `previous versions/snake_v0.08.prg`, `.d64` |
 | V0.07 | `previous versions/snake_v0.07.prg`, `.d64` |
@@ -74,6 +73,13 @@ The version number is shown on screen from V0.03 on.
 | V0.01 | `previous versions/snake_v0.01.prg`, `.d64` |
 
 Change Log:
+
+**V0.11** (2026-11-01)
+- New menu music: "Cool Tune" by Charles Deenen (1987), one SID, replacing the stereo "Sad Song"
+- The tune's zero-page variables were moved ($EB-$FF to $40-$57) so it doesn't clash with the C64's
+  keyboard routine and no longer clears $00-$02 when it starts; it sounds exactly the same
+- Second-SID detection removed (no longer needed)
+- Program down from 74 to 48 blocks: loads much faster
 
 **V0.10** (2026-11-01)
 - Title picture compressed (6750 to 4103 bytes): the program is down from 81 to 74 blocks, so it loads faster
