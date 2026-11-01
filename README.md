@@ -18,6 +18,7 @@ RUN
   joystick up/down or W switches wrap-around on or off.
 - **Game:** joystick in port 2, or W A S D. You have 3 lives, shown as apples at the top right.
   Eat 10 apples to reach the next level. P, RETURN, F1 or the fire button pauses the game.
+- **Demo:** leave the menu alone for about 40 seconds and the computer plays; any key or joystick move stops it.
 - **After game over:** with a Hall of Fame score you type your initials (joystick up/down and fire,
   or the keyboard and RETURN); otherwise fire or any key goes back to the menu.
 
@@ -26,7 +27,10 @@ Features:
 - 10 levels, each with its own maze; 10 apples per level, then back to level 1 at your current speed
 - A proper snake: head with eyes facing the way it moves, scaled body, rounded corners and a tapered tail
 - The snake gets faster every 5 apples
-- Bonus stars (worth 5 points) and power-ups appear now and then and vanish after about 4 seconds:
+- Enemies: a **mouse** that runs away from you (catch it for 10 points), and from level 4 a **hunter bug**
+  that slowly chases your head (touching it costs a life)
+- Combos: eat apples within 4 seconds of each other for x2, x3 ... up to x5 points ("COMBO X3" on the top line)
+- Bonus stars (worth 5 points) and power-ups appear now and then and stay about 8 seconds:
   - **Clock:** the game runs at half speed for 10 seconds
   - **Scissors:** the snake is cut in half (at least 4 pieces stay)
   - **Ghost:** for 6 seconds the snake goes straight through walls and edges
@@ -34,7 +38,9 @@ Features:
 - Bonus level after levels 5 and 10: 32 apples to eat in 30 seconds, +25 when you eat them all.
   Running out of time or crashing just ends the bonus level, it never costs a life
 - Pause: "-- PAUSED --" blinks on the top line until you press P, RETURN, F1, SPACE or fire
-- A heartbeat that beats faster as the snake grows
+- A slow, calm in-game tune, together with a heartbeat that beats faster as the snake grows
+- 8 achievements (Bonus Master, Combo King, Mouse Catcher, Star Collector, Top Level, Century,
+  Bug Survivor, Ghost Walker), shown on their own screen in the menu and saved with the Hall of Fame
 - Wrap-around option: leave through one edge and come back on the other side
 - Hall of Fame: top 10 with initials, saved on the disk; the menu shows it in turn with the title picture
 - Little effects: new apples sparkle, the border flashes on a crash, "LEVEL nn" and "GET READY" before each life
@@ -60,7 +66,8 @@ The version number is shown on screen from V0.03 on.
 
 | Version | Files |
 |---|---|
-| **V0.11** (latest) | `snake_v0.11.prg`, `snake_v0.11.d64` |
+| **V0.12** (latest) | `snake_v0.12.prg`, `snake_v0.12.d64` |
+| V0.11 | `previous versions/snake_v0.11.prg`, `.d64` |
 | V0.10 | `previous versions/snake_v0.10.prg`, `.d64` |
 | V0.09 | `previous versions/snake_v0.09.prg`, `.d64` |
 | V0.08 | `previous versions/snake_v0.08.prg`, `.d64` |
@@ -73,6 +80,14 @@ The version number is shown on screen from V0.03 on.
 | V0.01 | `previous versions/snake_v0.01.prg`, `.d64` |
 
 Change Log:
+
+**V0.12** (2026-11-01)
+- Enemies: a mouse that runs away (10 points) and, from level 4, a hunter bug that chases you
+- Combo scoring: apples within 4 seconds of each other score x2 to x5, with a rising "bloop"
+- Stars and power-ups stay twice as long (8 seconds)
+- 8 achievements with their own menu screen, announced in the game and saved in HISCORE
+- Slow in-game tune (melody and bass) alongside the heartbeat
+- Demo mode: the computer plays after about 40 seconds in the menu
 
 **V0.11** (2026-11-01)
 - New menu music: "Cool Tune" by Charles Deenen (1987), one SID, replacing the stereo "Sad Song"
