@@ -24,7 +24,11 @@ RUN
 
 Features:
 
-- 10 levels, each with its own maze; 10 apples per level, then back to level 1 at your current speed
+- 10 levels, each with its own maze and colour theme; 10 apples per level
+- Portals on levels 3, 5, 6, 8 and 10: go in one, come out of the other, still moving the same way
+- Moving walls on levels 6-10: a white wall slides back and forth (it never crushes anything)
+- A boss after level 10 and its bonus level: a big creature that chases you; eat 5 apples to beat it
+  (its hit points show on the top line, B05...B01), +50 points, then back to level 1 at your speed
 - A proper snake: head with eyes facing the way it moves, scaled body, rounded corners and a tapered tail
 - The snake gets faster every 5 apples
 - Enemies: a **mouse** that runs away from you (catch it for 10 points), and from level 4 a **hunter bug**
@@ -63,10 +67,12 @@ Version numbers :
 The latest version is in the main folder, older ones are in `previous versions`.
 Each version has a `.prg` (the program) and a `.d64` (a disk image with the program on it, named SNAKE).
 The version number is shown on screen from V0.03 on.
+From V0.13 the program is crunched: after RUN it unpacks itself (about 2 seconds) and starts.
 
 | Version | Files |
 |---|---|
-| **V0.12** (latest) | `snake_v0.12.prg`, `snake_v0.12.d64` |
+| **V0.13** (latest) | `snake_v0.13.prg`, `snake_v0.13.d64` |
+| V0.12 | `previous versions/snake_v0.12.prg`, `.d64` |
 | V0.11 | `previous versions/snake_v0.11.prg`, `.d64` |
 | V0.10 | `previous versions/snake_v0.10.prg`, `.d64` |
 | V0.09 | `previous versions/snake_v0.09.prg`, `.d64` |
@@ -80,6 +86,13 @@ The version number is shown on screen from V0.03 on.
 | V0.01 | `previous versions/snake_v0.01.prg`, `.d64` |
 
 Change Log:
+
+**V0.13** (2026-11-01)
+- Colour theme per level: own background and border colours (also for the bonus and boss levels)
+- Portals on levels 3, 5, 6, 8 and 10
+- Moving walls on levels 6-10
+- Boss fight after level 10 and its bonus level: eat 5 apples to beat it, +50 points
+- The whole program is crunched: 46 blocks instead of 73 unpacked (V0.12 was 58), unpacks itself in about 2 seconds
 
 **V0.12** (2026-11-01)
 - Enemies: a mouse that runs away (10 points) and, from level 4, a hunter bug that chases you
