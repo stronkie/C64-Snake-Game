@@ -20,7 +20,7 @@ RUN
 
 Features:
 
-- Main menu: the Stronkie's Snake artwork as a hi-res bitmap, with a panel showing speed, last score, hi-score and controls
+- Main menu: the Stronkie's Snake artwork as a hi-res bitmap (with "Created By Mark Stronks (C) 2026"), and a panel showing speed, last score, hi-score and controls
 - Three speeds: SLOW, NORMAL, FAST
 - 3 lives, shown as small red apple sprites; losing one restarts the snake and keeps your score
 - Game screen with the title "STRONKIE'S SNAKE" in yellow next to the score
@@ -31,7 +31,7 @@ Features:
 - Menu music: "Sad Song" by Antti Hannula (Flex), 2020, looping until the game starts
 - Full stereo music with a second SID at $D500 (Ultimate 64 / UltiSID, SIDFX, dual-SID boards, VICE).
   On a standard single-SID C64 the first SID's three voices play.
-  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.07.d64`
+  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.08.d64`
 - Reversing into yourself is blocked, so a quick wrong key won't end the game
 
 Version numbers :
@@ -42,7 +42,8 @@ The version number is shown on screen from V0.03 on.
 
 | Version | Files |
 |---|---|
-| **V0.07** (latest) | `snake_v0.07.prg`, `snake_v0.07.d64` |
+| **V0.08** (latest) | `snake_v0.08.prg`, `snake_v0.08.d64` |
+| V0.07 | `previous versions/snake_v0.07.prg`, `.d64` |
 | V0.06 | `previous versions/snake_v0.06.prg`, `.d64` |
 | V0.05 | `previous versions/snake_v0.05.prg`, `.d64` |
 | V0.04 | `previous versions/snake_v0.04.prg`, `.d64` |
@@ -51,6 +52,10 @@ The version number is shown on screen from V0.03 on.
 | V0.01 | `previous versions/snake_v0.01.prg`, `.d64` |
 
 Change Log:
+
+**V0.08** (2026-11-01)
+- New main menu picture: bigger title, the snake about to eat an apple, and "Created By Mark Stronks (C) 2026" in red and light red
+- The picture converter now keeps red lettering (cells can be white, cyan, red or light red on blue)
 
 **V0.07** (2026-11-01)
 - Hi-score file HISCORE on the disk: loaded at start-up, saved whenever the hi-score is beaten (old file is scratched first)
