@@ -15,18 +15,23 @@ RUN
 ```
 
 - **Menu:** fire, SPACE or RETURN starts the game. Joystick left/right or A / D sets the speed.
-- **Game:** joystick in port 2, or W A S D.
+- **Game:** joystick in port 2, or W A S D. You have 3 lives, shown as apples at the top right.
 - **After game over:** fire or any key goes back to the menu.
 
 Features:
 
 - Main menu: the Stronkie's Snake artwork as a hi-res bitmap, with a panel showing speed, last score, hi-score and controls
 - Three speeds: SLOW, NORMAL, FAST
-- Hi-score kept until the C64 is switched off
+- 3 lives, shown as small red apple sprites; losing one restarts the snake and keeps your score
+- Game screen with the title "STRONKIE'S SNAKE" in yellow next to the score
+- Sound effects: a rising "bloop" when eating an apple, a crash when you lose a life
+- Hi-score saved on the disk as the file HISCORE every time it is beaten, and loaded at start-up.
+  Needs a writable disk: a real 1541 disk without write protection, SD2IEC, Pi1541 or an Ultimate.
+  Without one the game still works and tells you the hi-score was not saved.
 - Menu music: "Sad Song" by Antti Hannula (Flex), 2020, looping until the game starts
 - Full stereo music with a second SID at $D500 (Ultimate 64 / UltiSID, SIDFX, dual-SID boards, VICE).
   On a standard single-SID C64 the first SID's three voices play.
-  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.06.d64`
+  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.07.d64`
 - Reversing into yourself is blocked, so a quick wrong key won't end the game
 
 Version numbers :
@@ -37,7 +42,8 @@ The version number is shown on screen from V0.03 on.
 
 | Version | Files |
 |---|---|
-| **V0.06** (latest) | `snake_v0.06.prg`, `snake_v0.06.d64` |
+| **V0.07** (latest) | `snake_v0.07.prg`, `snake_v0.07.d64` |
+| V0.06 | `previous versions/snake_v0.06.prg`, `.d64` |
 | V0.05 | `previous versions/snake_v0.05.prg`, `.d64` |
 | V0.04 | `previous versions/snake_v0.04.prg`, `.d64` |
 | V0.03 | `previous versions/snake_v0.03.prg`, `.d64` |
@@ -45,6 +51,15 @@ The version number is shown on screen from V0.03 on.
 | V0.01 | `previous versions/snake_v0.01.prg`, `.d64` |
 
 Change Log:
+
+**V0.07** (2026-11-01)
+- Hi-score file HISCORE on the disk: loaded at start-up, saved whenever the hi-score is beaten (old file is scratched first)
+- Uses the drive the game was loaded from (device 8 if loaded from tape)
+- 3 lives; losing one restarts the snake in the middle and keeps the score
+- Lives shown as small red apple sprites (multicolour, with leaf and shine) at the top right
+- Title "STRONKIE'S SNAKE" in yellow on the game screen, score in white
+- Sound effects: eating an apple, losing a life
+- Messages at game over: "NEW HI-SCORE SAVED TO DISK" or "NEW HI-SCORE (NOT SAVED)"
 
 **V0.06** (2026-11-01)
 - New main menu: the Stronkie's Snake artwork shown as a C64 hi-res bitmap (white title, cyan drawing on blue)
