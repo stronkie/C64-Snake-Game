@@ -3,13 +3,68 @@ Commodore 64 Snake Game
 
 Info about the Game :
 
+**Stronkie's Snake** is a Snake game for the Commodore 64, written in 6502 assembly.
+Steer the snake around the walled playfield, eat the hearts to grow and score,
+and don't hit the walls or your own body.
+
+Load it in VICE or on a real C64 (SD2IEC, Kung Fu Flash, Ultimate, Pi1541, or a floppy written from the .d64):
+
+```
+LOAD"SNAKE",8
+RUN
+```
+
+- **Menu:** fire, SPACE or RETURN starts the game. Joystick left/right or A / D sets the speed.
+- **Game:** joystick in port 2, or W A S D.
+- **After game over:** fire or any key goes back to the menu.
+
 Features:
+
+- Main menu screen with the Stronkie's Snake title, maze artwork, last score and hi-score
+- Three speeds: SLOW, NORMAL, FAST
+- Hi-score kept until the C64 is switched off
+- Menu music: "Sad Song" by Antti Hannula (Flex), 2020, looping until the game starts
+- Full stereo music with a second SID at $D500 (Ultimate 64 / UltiSID, SIDFX, dual-SID boards, VICE).
+  On a standard single-SID C64 the first SID's three voices play.
+  VICE: add 1 extra SID at $D500, or `x64sc -sidextra 1 -sid2address 0xd500 snake_v0.05.d64`
+- Reversing into yourself is blocked, so a quick wrong key won't end the game
 
 Version numbers :
 
+The latest version is in the main folder, older ones are in `previous versions`.
+Each version has a `.prg` (the program) and a `.d64` (a disk image with the program on it, named SNAKE).
+The version number is shown on screen from V0.03 on.
+
+| Version | Files |
+|---|---|
+| **V0.05** (latest) | `snake_v0.05.prg`, `snake_v0.05.d64` |
+| V0.04 | `previous versions/snake_v0.04.prg`, `.d64` |
+| V0.03 | `previous versions/snake_v0.03.prg`, `.d64` |
+| V0.02 | `previous versions/snake_v0.02.prg`, `.d64` |
+| V0.01 | `previous versions/snake_v0.01.prg`, `.d64` |
 
 Change Log:
 
+**V0.05** (2026-11-01)
+- Menu music: "Sad Song" by Antti Hannula (Flex), looping until the game starts
+- Detects a second SID at $D500: stereo with two SIDs, first SID only on a standard C64
+- Music stops when the game starts and starts again from the beginning back in the menu
+- Music credit on the menu screen
+- New memory layout around the music at $1000 (program is now 46 blocks)
 
+**V0.04** (2026-11-01)
+- New main menu screen "Stronkie's Snake", based on artwork: slanted frame, maze with snake and apple, blinking cursor under READY.
+- Speed setting: SLOW, NORMAL, FAST
+- Last score and hi-score on the menu
+- Game over now returns to the menu
 
+**V0.03** (2026-11-01)
+- Version number shown on the game screen
+- Fixed the BASIC start line's link pointer
 
+**V0.02** (2026-11-01)
+- First build with the Python toolchain (starts at 10 SYS 2061)
+
+**V0.01** (2026-11-01)
+- First version: walled playfield, snake that grows when it eats, random apples, 4-digit score, game over on walls or own body
+- Controls: joystick port 2 or W A S D
